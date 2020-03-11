@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import '../screens/product_detail_screen.dart';
+import 'package:provider/provider.dart';
+import '../providers/product.dart';
+import '../providers/cart.dart';
 
 class ProductItem extends StatelessWidget {
-  final String title;
-  final String id;
-  final String imageUrl;
-  ProductItem({this.id, this.imageUrl, this.title});
+//  final String title;
+//  final String id;
+//  final String imageUrl;
+//  ProductItem({this.id, this.imageUrl, this.title});
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Product>(context);
+    final cart = Provider.of<Cart>(context, listen: false);
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GridTile(
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => ProductDetailScreen(
-                  title: title,
-                ),
-              ),
+            Navigator.of(context).pushNamed(
+              ProductDetailScreen.routeName,
+              arguments: product.id,
             );
           },
           child: Image.network(
-            imageUrl,
+            product.imageUrl,
             fit: BoxFit.cover,
           ),
         ),
@@ -31,15 +33,20 @@ class ProductItem extends StatelessWidget {
           trailing: IconButton(
             icon: Icon(Icons.shopping_cart),
             color: Theme.of(context).accentColor,
-            onPressed: () {},
+            onPressed: () {
+              cart.addItem(product.id, product.price, product.title);
+            },
           ),
           leading: IconButton(
-            icon: Icon(Icons.favorite),
+            icon: Icon(
+                product.isFavourite ? Icons.favorite : Icons.favorite_border),
             color: Theme.of(context).accentColor,
-            onPressed: () {},
+            onPressed: () {
+              product.toggleFavoriteStatus();
+            },
           ),
           title: Text(
-            title,
+            product.title,
             textAlign: TextAlign.center,
           ),
         ),

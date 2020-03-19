@@ -12,3 +12,6 @@ from cart. On overview screen added  a badge of cart</br>
 which displays the item numbers added in cart. Application</br>
 has a big bug also,filters are not working. Some performance</br>
 improvement done. More features are coming.😍😍
+
+### Alpha20200320
+This is the second alpha build.</br> This one has working filter as well as a new edit product page. </br>  This page contains product added by user. </br>  User can edit and remove his own added products. </br>  Also improved some performance by changing lots of code.😅😴

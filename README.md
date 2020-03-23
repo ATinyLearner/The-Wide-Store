@@ -15,3 +15,6 @@ improvement done. More features are coming.😍😍
 
 ### Alpha20200320
 This is the second alpha build.</br> This one has working filter as well as a new edit product page. </br>  This page contains product added by user. </br>  User can edit and remove his own added products. </br>  Also improved some performance by changing lots of code.😅😴
+
+### Alpha20200323
+In this build many features are added and also application performance is redesigned.</br>App uses Server to save order data and also fetch data from server.</br>Improved error handling also added optimal </br>update process so that app manages its data more smartly.

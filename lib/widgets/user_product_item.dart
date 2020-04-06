@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import '../screens/edit_product_screen.dart';
-import '../providers/products.dart';
 import 'package:provider/provider.dart';
 
+import '../screens/edit_product_screen.dart';
+import '../providers/products.dart';
+
 class UserProductItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
-  final String id;
 
-  UserProductItem({
-    this.title,
-    this.imageUrl,
-    this.id,
-  });
+  UserProductItem(this.id, this.title, this.imageUrl);
+
   @override
   Widget build(BuildContext context) {
     final scaffold = Scaffold.of(context);
@@ -37,13 +35,13 @@ class UserProductItem extends StatelessWidget {
               icon: Icon(Icons.delete),
               onPressed: () async {
                 try {
-                  Provider.of<Products>(context, listen: false)
+                  await Provider.of<Products>(context, listen: false)
                       .deleteProduct(id);
                 } catch (error) {
                   scaffold.showSnackBar(
                     SnackBar(
                       content: Text(
-                        'Deleting Failed',
+                        'Deleting failed!',
                         textAlign: TextAlign.center,
                       ),
                     ),

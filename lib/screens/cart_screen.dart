@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../providers/cart.dart' show Cart;
 import '../widgets/cart_item.dart';
 import '../providers/orders.dart';
@@ -67,7 +68,6 @@ class OrderButton extends StatefulWidget {
     Key key,
     @required this.cart,
   }) : super(key: key);
-
   final Cart cart;
 
   @override
@@ -76,6 +76,53 @@ class OrderButton extends StatefulWidget {
 
 class _OrderButtonState extends State<OrderButton> {
   var _isLoading = false;
+  Razorpay _pay;
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _pay = Razorpay();
+    _pay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    _pay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
+    _pay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _pay.clear();
+  }
+
+  void openCheckout() async {
+    var options = {
+      'key': 'rzp_test_FCILuCw8hzdvTG',
+      'amount': (widget.cart.totalAmount) * 100,
+      'name': 'Checking Payment',
+      'Description': 'Test Payment',
+      'prefill': {'contact': '', 'email': ''},
+      'external': {
+        'wallets': ['paytm']
+      },
+    };
+    try {
+      _pay.open(options);
+    } catch (e) {
+      debugPrint(e);
+    }
+  }
+
+  void _handlePaymentSuccess(PaymentSuccessResponse response) {
+    Fluttertoast.showToast(msg: "Success " + response.paymentId);
+  }
+
+  void _handlePaymentError(PaymentFailureResponse response) {
+    Fluttertoast.showToast(
+        msg: "ERROR " + response.code.toString() + "-" + response.message);
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    Fluttertoast.showToast(msg: "External Wallet " + response.walletName);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +140,7 @@ class _OrderButtonState extends State<OrderButton> {
               );
               setState(() {
                 _isLoading = false;
+                openCheckout();
               });
               widget.cart.clear();
             },

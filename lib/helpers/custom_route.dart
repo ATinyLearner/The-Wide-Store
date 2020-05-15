@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class CustomRoute<T> extends MaterialPageRoute<T> {
   CustomRoute({
     WidgetBuilder builder,
@@ -16,7 +17,7 @@ class CustomRoute<T> extends MaterialPageRoute<T> {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    if (settings.isInitialRoute) {
+    if (settings.name=='/') {
       return child;
     }
     return FadeTransition(
@@ -35,7 +36,7 @@ class CustomPageTransitionBuilder extends PageTransitionsBuilder {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    if (route.settings.isInitialRoute) {
+    if (route.settings.name=='/') {
       return child;
     }
     return FadeTransition(

@@ -19,14 +19,14 @@ This is the second alpha build.</br> This one has working filter as well as a ne
 ### Alpha20200323  
 In this build many features are added and also application performance is redesigned.</br>App uses Server to save order data and also fetch data from server.</br>Improved error handling also added optimal </br>update process so that app manages its data more smartly.  
   
-### Beta20200406  
-This is the first beta build. App now works without any error.</br> Added some animations as well as some new features.  
+### Alpha20200406  
+This is the first alpha build. App now works without any error.</br> Added some animations as well as some new features.  
 </br>They are:</br>  
 New security methods.</br>  
 Added buttom button panel in Products details page.</br>  
 Added feature to create a session.</br>  
 <b>More new features are coming soon!!
 
-### Beta20200515
+### Alpha20200515
 In this build I have added online payment system. Payment platform support all online wallets and also user can pay instantly. Developing this application is ongoing process.
 Other features are also coming.  

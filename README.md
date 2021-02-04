@@ -1,5 +1,18 @@
-# TheWideStore  
+# **TheWideStore**  
 This is a shopping app where you can sell your own products. Here people can also purchase merchandises or products of other people or merchant. 😎🛒  
+# _ScreenShots_
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/LoginPage.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.25.18.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.25.45.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.25.54.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.26.05.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.26.16.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.26.26.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.26.31.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.26.49.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.28.03.png"/>
+<img width="150px" height="300" src="https://github.com/ATinyLearner/The-Wide-Store/blob/master/com.tech.ag.the_wide_store_Screenshot_2021.02.04_01.28.15.png"/>
+
 ## Changelogs  
 ### Initial Release  
 This is just an initial release. In this release just</br>  
